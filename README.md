@@ -52,52 +52,85 @@ The addition of an integral term to the controller ( ) tends to help reduce stea
 	Determine the steady state error and analyse the controllers.
 ## Program: 
 ### Without Controller (Open loop System)
-
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+step(sys)
 
 ### With P-Controller
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+Kp=300;
+C=pid(Kp);
+T=feedback(C*sys,1);
+step(T)
 
 ### With PI Controller
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+Kp=30;
+Ki=70;
+C=pid(Kp,Ki);
+T=feedback(C*sys,1);
+step(T)
 
 ### With PID Controller
-
+num=[1];
+den=[1 10 20];
+sys=tf(num,den)
+Kp=350;
+Ki=300;
+Kd=50;
+C=pid(Kp,Ki,Kd);
+T=feedback(C*sys,1);
+step(T)
 ## Output: 
 ### Without Controller (Open loop System)
-
+<img width="1914" height="1137" alt="image" src="https://github.com/user-attachments/assets/521ce5eb-c5aa-42da-b25b-b07e68eb6453" />
 
 ### With P-Controller
+<img width="1917" height="1127" alt="image" src="https://github.com/user-attachments/assets/08e43cdf-f0f0-433d-9c70-642b69ac01e9" />
 
 ### With PI Controller
+<img width="1916" height="1140" alt="image" src="https://github.com/user-attachments/assets/5aa7f3b7-bf35-4c78-8f30-2deb91355ad4" />
 
 ### With PID Controller
+<img width="1915" height="1136" alt="image" src="https://github.com/user-attachments/assets/337538a8-616b-424c-a6b5-dc646aaea269" />
 
 
 ## Result:
 Thus the P, PI and PID controllers for the given system was analysed and the following conclusions were arrived using MATLAB. <br>
-### With-out controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+### With-out controller
+```
+Delay time = 0.458s
+Rise time = 1.56s
+Peak time = 0.999s
+Settling time = 1.96s
+Steady State Error = 0
+```
 ### With P Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+```
+Delay time = 0.0887s
+Rise time = 0.16s
+Peak time = 0.19s
+Settling time = 1.1s
+Steady State Error = 0.1
+```
 ### With PI Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
+```
+Delay time = 0.303s
+Rise time = 0.649s
+Peak time = 0.82s
+Settling time = 1.87s
+Steady State Error = 0.87
+```
 ### With PID Controller 
-Delay time =         <br>
-Rise time =             <br>
-Peak time =           <br>
-Settling time =            <br>
-Steady State Error =        <br>
-
-
-
-
+```
+Delay time = 0.0243s
+Rise time = 0.0615s
+Peak time = 1.04s
+Settling time = 0.882s
+Steady State Error = 0.018
+```
