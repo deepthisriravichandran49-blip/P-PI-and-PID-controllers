@@ -50,87 +50,54 @@ The addition of an integral term to the controller ( ) tends to help reduce stea
 	Type the program.
 	Save and Execute the program.
 	Determine the steady state error and analyse the controllers.
-## Program: 
-### Without Controller (Open loop System)
-num=[1];
-den=[1 10 20];
-sys=tf(num,den)
-step(sys)
+## Simulink: 
+
 
 ### With P-Controller
-num=[1];
-den=[1 10 20];
-sys=tf(num,den)
-Kp=300;
-C=pid(Kp);
-T=feedback(C*sys,1);
-step(T)
+<img width="905" height="381" alt="Screenshot 2026-08-06 142138" src="https://github.com/user-attachments/assets/7659377b-9e54-4939-9318-d723eb4eb31b" />
+
 
 ### With PI Controller
-num=[1];
-den=[1 10 20];
-sys=tf(num,den)
-Kp=30;
-Ki=70;
-C=pid(Kp,Ki);
-T=feedback(C*sys,1);
-step(T)
+<img width="905" height="381" alt="Screenshot 2026-08-06 142138" src="https://github.com/user-attachments/assets/ffbc6af5-95d0-4d2e-8e5b-d5715b969516" />
 
 ### With PID Controller
-num=[1];
-den=[1 10 20];
-sys=tf(num,den)
-Kp=350;
-Ki=300;
-Kd=50;
-C=pid(Kp,Ki,Kd);
-T=feedback(C*sys,1);
-step(T)
-## Output: 
-### Without Controller (Open loop System)
-<img width="1914" height="1137" alt="image" src="https://github.com/user-attachments/assets/521ce5eb-c5aa-42da-b25b-b07e68eb6453" />
+<img width="905" height="381" alt="Screenshot 2026-08-06 142138" src="https://github.com/user-attachments/assets/ad5deee9-4f4f-4535-b19e-c0ce4212b29b" />
+
+## Output:
+
 
 ### With P-Controller
-<img width="1917" height="1127" alt="image" src="https://github.com/user-attachments/assets/08e43cdf-f0f0-433d-9c70-642b69ac01e9" />
+<img width="702" height="621" alt="Screenshot 2026-08-06 142653" src="https://github.com/user-attachments/assets/9a449213-9b81-400b-b50f-d4e13897137d" />
 
 ### With PI Controller
-<img width="1916" height="1140" alt="image" src="https://github.com/user-attachments/assets/5aa7f3b7-bf35-4c78-8f30-2deb91355ad4" />
+<img width="698" height="627" alt="Screenshot 2026-08-06 143941" src="https://github.com/user-attachments/assets/a0838708-1eea-4481-a877-75b2835743a5" />
 
 ### With PID Controller
-<img width="1915" height="1136" alt="image" src="https://github.com/user-attachments/assets/337538a8-616b-424c-a6b5-dc646aaea269" />
+<img width="685" height="635" alt="Screenshot 2026-08-06 143711" src="https://github.com/user-attachments/assets/63b2e507-c9c1-495d-90fc-f6d83d3c6846" />
 
 
 ## Result:
 Thus the P, PI and PID controllers for the given system was analysed and the following conclusions were arrived using MATLAB. <br>
-### With-out controller
-```
-Delay time = 0.458s
-Rise time = 1.56s
-Peak time = 0.999s
-Settling time = 1.96s
-Steady State Error = 0
-```
+
 ### With P Controller 
-```
-Delay time = 0.0887s
-Rise time = 0.16s
-Peak time = 0.19s
-Settling time = 1.1s
-Steady State Error = 0.1
-```
+Delay time = 0.04s        <br>
+Rise time = 0.08s            <br>
+Peak time = 0.12s          <br>
+Settling time = 1.3s          <br>
+Steady State Error = 1-0.98=0.02       <br>
 ### With PI Controller 
-```
-Delay time = 0.303s
-Rise time = 0.649s
-Peak time = 0.82s
-Settling time = 1.87s
-Steady State Error = 0.87
-```
+Delay time = 0.06s        <br>
+Rise time = 0.10s            <br>
+Peak time = 0.15s          <br>
+Settling time = 1.2s           <br>
+Steady State Error = 1-1=0       <br>
 ### With PID Controller 
-```
-Delay time = 0.0243s
-Rise time = 0.0615s
-Peak time = 1.04s
-Settling time = 0.882s
-Steady State Error = 0.018
-```
+Delay time = 0.15s         <br>
+Rise time = 0.90s            <br>
+Peak time = 1.30s           <br>
+Settling time = 1.2s          <br>
+Steady State Error = 1-1=0    <br>
+
+
+
+
